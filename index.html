@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureKnit - Soft Hosiery Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- The interactive dual-glow minimal background -->
+    <div id="glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <!-- Logo acts as a home button, references the user's uploaded logo -->
+        <a href="index.html" class="logo">
+            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" data-lang="nav_home" class="active">Home</a></li>
+            <li><a href="products.html" data-lang="nav_products">Products</a></li>
+            <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="help.html" data-lang="nav_help">Help</a></li>
+            <li><a href="login.html" data-lang="nav_login">Login</a></li>
+        </ul>
+        <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <div class="badge" data-lang="badge_new">PureKnit Soft Hosiery</div>
+            <h1 data-lang="hero_title">The Premium Yarn & Hosiery Network</h1>
+            <p data-lang="hero_subtitle">A minimal, soft-touch interface bridging domestic artisans with global hosiery
+                buyers.</p>
+            <div class="actions">
+                <a href="products.html" class="btn btn-primary" data-lang="btn_explore">Explore Collection</a>
+                <a href="seller.html" class="btn btn-outline" data-lang="btn_seller">Become a Seller</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="grid">
+            <div class="feature-card">
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 data-lang="feat_1_title">Global Reach</h3>
+                <p data-lang="feat_1_desc">Connect your soft knits with international buyers effortlessly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <h3 data-lang="feat_2_title">Instant Quotes</h3>
+                <p data-lang="feat_2_desc">Real-time pricing for bulk domestic orders.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3 data-lang="feat_3_title">Verified Patterns</h3>
+                <p data-lang="feat_3_desc">Trustworthy tracking from the very first thread to the final weave.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureKnit - Account Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-lang="nav_home">Home</a></li>
+            <li><a href="products.html" data-lang="nav_products">Products</a></li>
+            <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="help.html" data-lang="nav_help">Help</a></li>
+            <li><a href="login.html" data-lang="nav_login" class="active">Login</a></li>
+        </ul>
+        <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
+    </nav>
+
+    <main class="container auth-layout">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab active" onclick="switchAuthTab('login')" data-lang="tab_login">Login</button>
+                <button id="tab-signup" class="auth-tab" onclick="switchAuthTab('signup')" data-lang="tab_signup">Sign Up</button>
+            </div>
+            
+            <div id="login-form" class="auth-form active">
+                <h2 data-lang="auth_welcome">Welcome Back</h2>
+                <p>Login to track your hosiery orders.</p>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div id="login-error" class="error-msg"></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; border-radius:12px; padding:1.2rem; font-size:1.1rem; margin-top:1rem;">Access Account</button>
+                </form>
+            </div>
+
+            <div id="signup-form" class="auth-form">
+                <h2 data-lang="auth_join">Create Account</h2>
+                <p>Join PureKnit for exclusive marketplace access.</p>
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signup-password" minlength="6" required>
+                    </div>
+                    <div id="signup-error" class="error-msg"></div>
+                    <div id="signup-success" class="success-msg"></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; border-radius:12px; padding:1.2rem; font-size:1.1rem; margin-top:1rem;">Create Account</button>
+                </form>
+            </div>
+            
+            <!-- Logged in state -->
+            <div id="profile-view" class="auth-form">
+                <h2>Your Profile</h2>
+                <p style="margin-bottom:0.5rem; font-size:1.1rem;">Welcome back, <strong id="profile-name" style="color:var(--text-heading);"></strong>!</p>
+                <p style="margin-bottom:3rem; color:var(--text-muted); font-size:0.95rem;">Registered Email: <span id="profile-email"></span></p>
+                
+                <div style="background:rgba(74,20,140,0.05); padding:1.5rem; border-radius:16px; margin-bottom:2rem; border:1px solid var(--border);">
+                    <h4 style="margin-bottom:0.5rem; color:var(--text-heading);">Account Status</h4>
+                    <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Active Marketplace Member</p>
+                </div>
+
+                <a href="products.html" class="btn btn-primary" style="display:block; text-align:center; width:100%; border-radius:12px; padding:1.2rem; font-size:1.1rem; margin-bottom:1rem;">Shop Collection</a>
+                <button onclick="handleLogout()" class="btn btn-outline" style="width:100%; border-radius:12px; padding: 1.2rem; color:#d84315; font-weight:600;">Log Out Safely</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

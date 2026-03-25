@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureKnit - Your Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-lang="nav_home">Home</a></li>
+            <li><a href="products.html" data-lang="nav_products">Products</a></li>
+            <li><a href="cart.html" class="active"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="help.html" data-lang="nav_help">Help</a></li>
+            <li><a href="login.html" data-lang="nav_login">Login</a></li>
+        </ul>
+        <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
+    </nav>
+
+    <main class="container cart-layout">
+        <div class="cart-main">
+            <h1 class="page-title" style="text-align:left; margin-bottom: 2rem;">Shopping Cart</h1>
+            <div id="cart-items-container" class="cart-items-list">
+                <!-- Javascript will powerfully assemble detailed cart objects here -->
+            </div>
+        </div>
+        <div class="cart-sidebar">
+            <div id="cart-summary-totals" class="summary-box">
+                <!-- Shopping totals populated via real-time logic -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

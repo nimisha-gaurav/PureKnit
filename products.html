@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureKnit - Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-lang="nav_home">Home</a></li>
+            <li><a href="products.html" data-lang="nav_products" class="active">Products</a></li>
+            <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="help.html" data-lang="nav_help">Help</a></li>
+            <li><a href="login.html" data-lang="nav_login">Login</a></li>
+        </ul>
+        <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Hosiery Collection</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Premium knitted products from domestic and global artisans.</p>
+    </header>
+
+    <section id="product-container" class="products-grid">
+        <!-- Products injected by JS -->
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Product rendering explicitly moved to global script.js logic
+    </script>
+</body>
+</html>

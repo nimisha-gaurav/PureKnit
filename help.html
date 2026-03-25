@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureKnit - Help & Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="glow"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-lang="nav_home">Home</a></li>
+            <li><a href="products.html" data-lang="nav_products">Products</a></li>
+            <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="help.html" data-lang="nav_help" class="active">Help</a></li>
+            <li><a href="login.html" data-lang="nav_login">Login</a></li>
+        </ul>
+        <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title" data-lang="title_help">Help & Support</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;" data-lang="help_desc">We're here to help you with your hosiery orders.</p>
+    </header>
+
+    <main class="container support-layout" style="max-width: 800px; margin: 0 auto; padding: 0 5% 4rem; position:relative; z-index:5;">
+        <div class="support-card glass-card">
+            <h2 style="font-family:'Outfit'; font-size:2rem; color:var(--text-heading); margin-bottom:1.5rem;" data-lang="help_contact">Contact Us</h2>
+            
+            <div class="contact-method">
+                <h4 data-lang="help_phone">Phone Number</h4>
+                <p>+91 70727 XXXXX</p>
+            </div>
+
+            <div class="contact-method">
+                <h4 data-lang="help_email">Email Support</h4>
+                <p><a href="mailto:pureknit.support@xyz.com" style="color:var(--accent); text-decoration:none; font-weight:600;">pureknit.support@xyz.com</a></p>
+            </div>
+
+            <div class="contact-method">
+                <h4 data-lang="help_hq">Corporate Headquarters</h4>
+                <p>
+                    PureKnit Hosiery Pvt. Ltd.<br>
+                    45 Mahatma Gandhi Marg, Textile Hub<br>
+                    Connaught Place, New Delhi<br>
+                    India - 110001
+                </p>
+            </div>
+            
+            <hr style="border:none; border-top:1px solid rgba(74,20,140,0.1); margin: 2rem 0;">
+            
+            <h3 style="font-family:'Outfit'; font-size:1.5rem; color:var(--text-heading); margin-bottom:1rem;" data-lang="help_faq">Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h5>How do I track my bulk order?</h5>
+                <p>Tracking information will be automatically emailed to your registered address as soon as the logistics team processes your shipment.</p>
+            </div>
+            <div class="faq-item">
+                <h5>What is the return policy for international shipments?</h5>
+                <p>We accept unopened hosiery returns within 14 days of delivery. Shipping refunds apply exclusively to defective units.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
