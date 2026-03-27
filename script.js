@@ -1,19 +1,19 @@
 const globalProductsList = [
-    { id: 1, name: "Merino Wool Blend Socks", name_hi: "मेरिनो ऊन ब्लेंड मोज़े", price: "₹1,250", img: "https://images.unsplash.com/photo-1582042732009-dd298516dcd8?auto=format&fit=crop&w=400&q=80", desc: "Premium merino wool blend ankle socks designed for all-day comfort and breathability. Highly durable and ultra-soft.", desc_hi: "प्रीमियम मेरिनो ऊन ब्लेंड टखने के मोज़े - पूरे दिन आराम और हवादार रहने के लिए डिज़ाइन किए गए। अत्यधिक टिकाऊ और बेहद रेशमी।" },
-    { id: 2, name: "Opaque Winter Tights", name_hi: "सर्दियों की अपारदर्शी चड्डी", price: "₹1,850", img: "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=400&q=80", desc: "Thick, warm opaque tights perfect for layering during cold winter months. Guaranteed not to tear.", desc_hi: "सर्दियों के महीनों के दौरान लेयरिंग के लिए परफेक्ट मोटी, गर्म अपारदर्शी चड्ढियां। न फटने की गारंटी।" },
-    { id: 3, name: "Athletic Compression Shins", name_hi: "एथलेटिक संपीड़न पिंडली मोज़े", price: "₹1,400", img: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=400&q=80", desc: "Designed for rigorous workouts, these compression socks aid in recovery and active sport performance.", desc_hi: "कठोर कसरत के लिए डिज़ाइन किए गए, ये संपीड़न मोज़े खेल प्रदर्शन और रिकवरी में सहायता करते हैं।" },
-    { id: 4, name: "Cashmere Sleep Socks", name_hi: "कश्मीरी नाइट मोज़े", price: "₹2,100", img: "https://images.unsplash.com/photo-1552554766-3d23da567a99?auto=format&fit=crop&w=400&q=80", desc: "Incredibly soft cashmere, providing ultimate luxury and warmth for lounging at home or bedtime.", desc_hi: "अविश्वसनीय रूप से नरम कश्मीरी, घर पर आराम करने या सोने के समय के लिए परम विलासिता और गर्माहट प्रदान करता है।" },
-    { id: 5, name: "Sheer Pantyhose", name_hi: "पारदर्शी पेंटीहोज़", price: "₹950", img: "https://images.unsplash.com/photo-1596726242371-2e6b91ccf0f4?auto=format&fit=crop&w=400&q=80", desc: "Professional, elegant sheer pantyhose offering a smooth and comfortable stretch.", desc_hi: "पेशेवर, सुरुचिपूर्ण पारदर्शी पेंटीहोज़ जो सुचारू और आरामदायक स्ट्रेच प्रदान करते हैं।" },
-    { id: 6, name: "Bamboo Crew Socks", name_hi: "बांस फाइबर मोज़े", price: "₹850", img: "https://images.unsplash.com/photo-1595175510619-ce2d1ee94fd1?auto=format&fit=crop&w=400&q=80", desc: "Eco-friendly bamboo crew socks that are naturally antimicrobial and odor-resistant.", desc_hi: "पर्यावरण के अनुकूल बांस क्रू मोज़े जो प्राकृतिक रूप से रोगाणुरोधी और गंध प्रतिरोधी हैं।" },
-    { id: 7, name: "Thermal Leggings", name_hi: "थर्मल लेगिंग", price: "₹2,400", img: "https://images.unsplash.com/photo-1560942065-cc9f7a55edcd?auto=format&fit=crop&w=400&q=80", desc: "Heavyweight thermal leggings built to withstand extremely cold environments and snowy climates.", desc_hi: "बेहद ठंडे वातावरण और बर्फीली जलवायु का सामना करने के लिए बनाई गई हैवीवेट थर्मल लेगिंग।" },
-    { id: 8, name: "Patterned Ankle Socks", name_hi: "पैटर्न वाले टखने के मोज़े", price: "₹650", img: "https://images.unsplash.com/photo-1515281488582-74cce99120de?auto=format&fit=crop&w=400&q=80", desc: "Fun, intricately patterned ankle socks perfect for showcasing a touch of distinct personality.", desc_hi: "विशिष्ट व्यक्तित्व का स्पर्श दिखाने के लिए बिल्कुल सही मज़ेदार, जटिल पैटर्न वाले टखने के मोज़े।" },
-    { id: 9, name: "Running Over-Calf", name_hi: "दौड़ने वाले मोज़े", price: "₹1,350", img: "https://images.unsplash.com/photo-1563223010-8bde3301a216?auto=format&fit=crop&w=400&q=80", desc: "Securely fitting over-calf running socks specifically engineered to prevent blisters during marathons.", desc_hi: "सुरक्षित रूप से पैर पर फिट होने वाले रनिंग मोज़े विशेष रूप से मैराथन के दौरान छालों को रोकने के लिए तैयार किए गए हैं।" },
-    { id: 10, name: "Luxury Alpaca Knit", name_hi: "लक्जरी अल्पाका मोज़े", price: "₹3,200", img: "https://images.unsplash.com/photo-1549488344-c11ed17bca88?auto=format&fit=crop&w=400&q=80", desc: "Hand-crafted alpaca knit hosiery providing warmth that surpasses standard wool with zero itchiness.", desc_hi: "हाथ से तैयार की गई अल्पाका निट होज़री जो बिना किसी खुजली के मानक ऊन से अधिक गर्मी प्रदान करती है।" },
-    { id: 11, name: "Everyday Cotton Socks", name_hi: "दैनिक सूती मोज़े", price: "₹450", img: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?auto=format&fit=crop&w=400&q=80", desc: "Reliable, breathable multi-pack cotton socks built for everyday casual wear.", desc_hi: "रोजमर्रा के आकस्मिक पहनने के लिए बनाए गए विश्वसनीय, सांस लेने योग्य सूती मोज़े।" },
-    { id: 12, name: "Vintage Knee-Highs", name_hi: "विंटेज घुटने तक के मोज़े", price: "₹1,100", img: "https://images.unsplash.com/photo-1608228079968-c768ab1428b4?auto=format&fit=crop&w=400&q=80", desc: "Classic vintage-styled knee highs offering both striking fashion and robust comfort.", desc_hi: "क्लासिक विंटेज-शैली के घुटने तक मोज़े जो शानदार फैशन और मजबूत आराम दोनों प्रदान करते हैं।" },
-    { id: 13, name: "Fleece-Lined Tights", name_hi: "ऊन वाली चड्डी", price: "₹2,600", img: "https://images.unsplash.com/photo-1584844053073-6238383c27ac?auto=format&fit=crop&w=400&q=80", desc: "Tights mimicking a sheer look on the outside, but fully lined with exceptionally warm inner fleece.", desc_hi: "बाहर से पारदर्शी लुक की नकल करने वाली लेकिन अंदर उत्कृष्ट ऊन वाली बेहद गर्म चड्डी।" },
-    { id: 14, name: "Active Ankle Guards", name_hi: "एक्टिव एंकल गार्ड", price: "₹750", img: "https://images.unsplash.com/photo-1522778731333-6a56e5df1f6c?auto=format&fit=crop&w=400&q=80", desc: "Low-cut ankle guards with targeted heel and toe padding for high-impact sports.", desc_hi: "उच्च प्रभाव वाले खेलों के लिए एड़ी और पैर की उंगलियों की गद्दी वाले टखने के गार्ड।" },
-    { id: 15, name: "Ribbed Lounge Socks", name_hi: "रिब्ड लाउंज मोज़े", price: "₹1,600", img: "https://images.unsplash.com/photo-1550995694-3e913a525f0e?auto=format&fit=crop&w=400&q=80", desc: "Chunky ribbed knitting perfect for slow weekends, reading by the fireplace, and relaxing indoors.", desc_hi: "चंकी रिब्ड बुनाई जो सप्ताहांत में आराम करने, चिमनी के पास पढ़ने और घर के अंदर रहने के लिए बिल्कुल सही है।" }
+    { id: 1, name: "Merino Wool Blend Socks", name_hi: "मेरिनो ऊन ब्लेंड मोज़े", price: "₹1,250", img: "assets/product_1.jpg", desc: "Premium merino wool blend ankle socks designed for all-day comfort and breathability. Highly durable and ultra-soft.", desc_hi: "प्रीमियम मेरिनो ऊन ब्लेंड टखने के मोज़े - पूरे दिन आराम और हवादार रहने के लिए डिज़ाइन किए गए। अत्यधिक टिकाऊ और बेहद रेशमी।" },
+    { id: 2, name: "Opaque Winter Tights", name_hi: "सर्दियों की अपारदर्शी चड्डी", price: "₹1,850", img: "assets/product_2.jpg", desc: "Thick, warm opaque tights perfect for layering during cold winter months. Guaranteed not to tear.", desc_hi: "सर्दियों के महीनों के दौरान लेयरिंग के लिए परफेक्ट मोटी, गर्म अपारदर्शी चड्ढियां। न फटने की गारंटी।" },
+    { id: 3, name: "Athletic Compression Shins", name_hi: "एथलेटिक संपीड़न पिंडली मोज़े", price: "₹1,400", img: "assets/product_3.jpg", desc: "Designed for rigorous workouts, these compression socks aid in recovery and active sport performance.", desc_hi: "कठोर कसरत के लिए डिज़ाइन किए गए, ये संपीड़न मोज़े खेल प्रदर्शन और रिकवरी में सहायता करते हैं।" },
+    { id: 4, name: "Cashmere Sleep Socks", name_hi: "कश्मीरी नाइट मोज़े", price: "₹2,100", img: "assets/product_4.jpg", desc: "Incredibly soft cashmere, providing ultimate luxury and warmth for lounging at home or bedtime.", desc_hi: "अविश्वसनीय रूप से नरम कश्मीरी, घर पर आराम करने या सोने के समय के लिए परम विलासिता और गर्माहट प्रदान करता है।" },
+    { id: 5, name: "Sheer Pantyhose", name_hi: "पारदर्शी पेंटीहोज़", price: "₹950", img: "assets/product_5.jpg", desc: "Professional, elegant sheer pantyhose offering a smooth and comfortable stretch.", desc_hi: "पेशेवर, सुरुचिपूर्ण पारदर्शी पेंटीहोज़ जो सुचारू और आरामदायक स्ट्रेच प्रदान करते हैं।" },
+    { id: 6, name: "Bamboo Crew Socks", name_hi: "बांस फाइबर मोज़े", price: "₹850", img: "assets/product_6.jpg", desc: "Eco-friendly bamboo crew socks that are naturally antimicrobial and odor-resistant.", desc_hi: "पर्यावरण के अनुकूल बांस क्रू मोज़े जो प्राकृतिक रूप से रोगाणुरोधी और गंध प्रतिरोधी हैं।" },
+    { id: 7, name: "Thermal Leggings", name_hi: "थर्मल लेगिंग", price: "₹2,400", img: "assets/product_7.jpg", desc: "Heavyweight thermal leggings built to withstand extremely cold environments and snowy climates.", desc_hi: "बेहद ठंडे वातावरण और बर्फीली जलवायु का सामना करने के लिए बनाई गई हैवीवेट थर्मल लेगिंग।" },
+    { id: 8, name: "Patterned Ankle Socks", name_hi: "पैटर्न वाले टखने के मोज़े", price: "₹650", img: "assets/product_8.jpg", desc: "Fun, intricately patterned ankle socks perfect for showcasing a touch of distinct personality.", desc_hi: "विशिष्ट व्यक्तित्व का स्पर्श दिखाने के लिए बिल्कुल सही मज़ेदार, जटिल पैटर्न वाले टखने के मोज़े।" },
+    { id: 9, name: "Running Over-Calf", name_hi: "दौड़ने वाले मोज़े", price: "₹1,350", img: "assets/product_9.jpg", desc: "Securely fitting over-calf running socks specifically engineered to prevent blisters during marathons.", desc_hi: "सुरक्षित रूप से पैर पर फिट होने वाले रनिंग मोज़े विशेष रूप से मैराथन के दौरान छालों को रोकने के लिए तैयार किए गए हैं।" },
+    { id: 10, name: "Luxury Alpaca Knit", name_hi: "लक्जरी अल्पाका मोज़े", price: "₹3,200", img: "assets/product_10.jpg", desc: "Hand-crafted alpaca knit hosiery providing warmth that surpasses standard wool with zero itchiness.", desc_hi: "हाथ से तैयार की गई अल्पाका निट होज़री जो बिना किसी खुजली के मानक ऊन से अधिक गर्मी प्रदान करती है।" },
+    { id: 11, name: "Everyday Cotton Socks", name_hi: "दैनिक सूती मोज़े", price: "₹450", img: "assets/product_11.jpg", desc: "Reliable, breathable multi-pack cotton socks built for everyday casual wear.", desc_hi: "रोजमर्रा के आकस्मिक पहनने के लिए बनाए गए विश्वसनीय, सांस लेने योग्य सूती मोज़े।" },
+    { id: 12, name: "Vintage Knee-Highs", name_hi: "विंटेज घुटने तक के मोज़े", price: "₹1,100", img: "assets/product_12.jpg", desc: "Classic vintage-styled knee highs offering both striking fashion and robust comfort.", desc_hi: "क्लासिक विंटेज-शैली के घुटने तक मोज़े जो शानदार फैशन और मजबूत आराम दोनों प्रदान करते हैं।" },
+    { id: 13, name: "Fleece-Lined Tights", name_hi: "ऊन वाली चड्डी", price: "₹2,600", img: "assets/product_13.jpg", desc: "Tights mimicking a sheer look on the outside, but fully lined with exceptionally warm inner fleece.", desc_hi: "बाहर से पारदर्शी लुक की नकल करने वाली लेकिन अंदर उत्कृष्ट ऊन वाली बेहद गर्म चड्डी।" },
+    { id: 14, name: "Active Ankle Guards", name_hi: "एक्टिव एंकल गार्ड", price: "₹750", img: "assets/product_14.jpg", desc: "Low-cut ankle guards with targeted heel and toe padding for high-impact sports.", desc_hi: "उच्च प्रभाव वाले खेलों के लिए एड़ी और पैर की उंगलियों की गद्दी वाले टखने के गार्ड।" },
+    { id: 15, name: "Ribbed Lounge Socks", name_hi: "रिब्ड लाउंज मोज़े", price: "₹1,600", img: "assets/product_15.jpg", desc: "Chunky ribbed knitting perfect for slow weekends, reading by the fireplace, and relaxing indoors.", desc_hi: "चंकी रिब्ड बुनाई जो सप्ताहांत में आराम करने, चिमनी के पास पढ़ने और घर के अंदर रहने के लिए बिल्कुल सही है।" }
 ];
 
 function renderProducts() {
@@ -105,7 +105,8 @@ const translations = {
     "feat_2_title": "Instant Quotes",
     "feat_2_desc": "Real-time pricing for bulk domestic orders.",
     "feat_3_title": "Verified Patterns",
-    "feat_3_desc": "Trustworthy tracking from the very first thread to the final weave."
+    "feat_3_desc": "Trustworthy tracking from the very first thread to the final weave.",
+    "nav_tracking": "Track Order"
   },
   hi: {
     "nav_home": "होम",
@@ -123,7 +124,8 @@ const translations = {
     "feat_2_title": "त्वरित उद्धरण",
     "feat_2_desc": "थोक घरेलू आदेशों के लिए वास्तविक समय मूल्य निर्धारण।",
     "feat_3_title": "सत्यापित पैटर्न",
-    "feat_3_desc": "पहले धागे से लेकर अंतिम बुनाई तक भरोसेमंद ट्रैकिंग।"
+    "feat_3_desc": "पहले धागे से लेकर अंतिम बुनाई तक भरोसेमंद ट्रैकिंग।",
+    "nav_tracking": "ऑर्डर ट्रैक करें"
   }
 };
 
@@ -132,14 +134,26 @@ Object.assign(translations.en, {
     title_products: "Our Hosiery Collection", title_cart: "Shopping Cart", title_help: "Help & Support",
     cart_empty: "Your cart is entirely empty.", cart_summary: "Summary", cart_subtotal: "Subtotal:", cart_total: "Total:", cart_checkout: "Proceed to Checkout",
     help_desc: "We're here to help you with your hosiery orders.", help_contact: "Contact Us", help_faq: "Frequently Asked Questions",
-    tab_login: "Login", tab_signup: "Sign Up", auth_welcome: "Welcome Back", auth_join: "Create Account"
+    tab_login: "Login", tab_signup: "Sign Up", auth_welcome: "Welcome Back", auth_join: "Create Account",
+    nav_about: "About Us", about_title: "Our Story", about_subtitle: "Bridging the gap between domestic artisans and global hosiery luxury.",
+    about_mission_title: "Our Mission", about_mission_text: "PureKnit was founded on a simple principle: high-quality comfort shouldn't be a logistical nightmare. We set out to create a seamless, elegant digital marketplace that directly connects the finest local hosiery weavers in India with international clientele.",
+    about_values_title: "Core Values", about_val1_title: "Quality Sourcing", about_val1_text: "Every single thread is ethically sourced and rigorously quality-tested before dispatch.",
+    about_val2_title: "Transparent Logistics", about_val2_text: "We handle the vast complexities of wholesale global shipping so you can focus entirely on style.",
+    checkout_title: "Secure Checkout", checkout_billing: "Billing & Shipping", checkout_fname: "First Name", checkout_lname: "Last Name", checkout_address: "Address Line", checkout_city: "City / District", checkout_pin: "PIN Code", checkout_payment: "Payment Detail (Mock)", checkout_card: "Card Number", checkout_expiry: "Expiry", checkout_paybtn: "Confirm & Pay", checkout_order: "Order Summary", checkout_success: "Order Confirmed!", checkout_success_desc: "Your premium hosiery is being prepared for dispatch. A tracking link has been emailed to you.", checkout_return: "Return Home",
+    nav_rewards: "Rewards", rewards_title: "PureKnit Loyalty Club", rewards_subtitle: "Earn Thread Points on every purchase.", rewards_user: "Welcome", rewards_tier: "Current Tier:", rewards_points: "Thread Points", tier_cotton: "Bronze Cotton", tier_silk: "Silver Silk", tier_cashmere: "Gold Cashmere", perk1_title: "Free Shipping", perk1_desc: "Always completely free domestic shipping for members on any quantity.", perk2_title: "Wholesale Unlock", perk2_desc: "Reach Silver Silk to access B2B bulk discount quoting instantly.", rewards_join: "Join the Club", rewards_join_desc: "Securely login or create an account to start earning Thread Points on your cashmere and silk acquisitions."
 });
 Object.assign(translations.hi, {
     btn_add: "कार्ट में डालें", btn_back: "कैटलॉग पर वापस", stock: "स्टॉक में है", each: "प्रत्येक",
     title_products: "हमारा होज़री संग्रह", title_cart: "शॉपिंग कार्ट", title_help: "सहायता और समर्थन",
     cart_empty: "आपका कार्ट पूरी तरह खाली है।", cart_summary: "सारांश", cart_subtotal: "उपयोग राशि:", cart_total: "कुल:", cart_checkout: "चेकआउट के लिए आगे बढ़ें",
     help_desc: "हम आपके होज़री ऑर्डर में आपकी सहायता के लिए यहां हैं।", help_contact: "संपर्क करें", help_faq: "अक्सर पूछे जाने वाले प्रश्न",
-    tab_login: "लॉगिन", tab_signup: "साइन अप", auth_welcome: "वापसी पर स्वागत है", auth_join: "खाता बनाएं"
+    tab_login: "लॉगिन", tab_signup: "साइन अप", auth_welcome: "वापसी पर स्वागत है", auth_join: "खाता बनाएं",
+    nav_about: "हमारे बारे में", about_title: "हमारी कहानी", about_subtitle: "घरेलू कारीगरों और वैश्विक होज़री विलासिता के बीच की खाई को पाटना।",
+    about_mission_title: "हमारा लक्ष्य", about_mission_text: "प्योरनिट एक सरल सिद्धांत पर स्थापित किया गया था: उच्च गुणवत्ता वाला आराम एक साजो सामान का दुःस्वप्न नहीं होना चाहिए। हम एक निर्बाध, सुरुचिपूर्ण डिजिटल बाज़ार बनाने के लिए तैयार हैं जो अंतरराष्ट्रीय ग्राहकों के साथ भारत में बेहतरीन स्थानीय होज़री बुनकरों को सीधे जोड़ता है।",
+    about_values_title: "कठोर मूल्य", about_val1_title: "गुणवत्ता सोर्सिंग", about_val1_text: "हर एक धागा नैतिक रूप से सुरक्षित किया जाता है और प्रेषण से पहले कठोर गुणवत्ता का परीक्षण किया जाता है।",
+    about_val2_title: "पारदर्शी रसद", about_val2_text: "हम थोक वैश्विक शिपिंग की विशाल जटिलताओं को संभालते हैं ताकि आप पूरी तरह से शैली पर ध्यान केंद्रित कर सकें।",
+    checkout_title: "सुरक्षित चेकआउट", checkout_billing: "बिलिंग और शिपिंग", checkout_fname: "पहला नाम", checkout_lname: "अंतिम नाम", checkout_address: "पता", checkout_city: "शहर/जिला", checkout_pin: "पिन कोड", checkout_payment: "भुगतान विवरण (नकली)", checkout_card: "कार्ड नंबर", checkout_expiry: "समाप्ति", checkout_paybtn: "पुष्टि करें और भुगतान करें", checkout_order: "ऑर्डर सारांश", checkout_success: "ऑर्डर की पुष्टि हो गई!", checkout_success_desc: "आपकी प्रीमियम होज़री प्रेषण के लिए तैयार की जा रही है। एक ट्रैकिंग लिंक आपको ईमेल किया गया है।", checkout_return: "होम पर लौटें",
+    nav_rewards: "इनाम", rewards_title: "प्योरनिट लॉयल्टी क्लब", rewards_subtitle: "हर खरीदारी पर थ्रेड पॉइंट कमाएं।", rewards_user: "स्वागत है", rewards_tier: "वर्तमान टियर:", rewards_points: "थ्रेड पॉइंट", tier_cotton: "कांस्य कपास", tier_silk: "सिल्वर सिल्क", tier_cashmere: "गोल्ड कश्मीरी", perk1_title: "नि: शुल्क शिपिंग", perk1_desc: "किसी भी मात्रा पर सदस्यों के लिए हमेशा पूरी तरह से मुफ्त घरेलू शिपिंग।", perk2_title: "थोक अनलॉक", perk2_desc: "बी2बी बल्क डिस्काउंट कोटिंग को तुरंत एक्सेस करने के लिए सिल्वर सिल्क तक पहुंचें।", rewards_join: "क्लब मे शामिल हों", rewards_join_desc: "अपने कश्मीरी और रेशम अधिग्रहण पर थ्रेड पॉइंट अर्जित करना शुरू करने के लिए सुरक्षित रूप से लॉगिन करें या एक खाता बनाएं।"
 });
 
 let currentLang = localStorage.getItem('site_lang_pureknit') || 'en';
@@ -185,6 +199,7 @@ function toggleLanguage() {
   if (typeof renderProductDetails === 'function') renderProductDetails();
   if (typeof renderCart === 'function') renderCart();
   if (typeof renderCheckoutSummary === 'function') renderCheckoutSummary();
+  if (typeof renderRewardsHub === 'function') renderRewardsHub();
 }
 
 Object.assign(translations.en, {
@@ -224,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProductDetails();
   renderCart();
   if (typeof renderCheckoutSummary === 'function') renderCheckoutSummary();
+  if (typeof renderRewardsHub === 'function') renderRewardsHub();
   initAuth();
 
   // --- Interactive Canvas Yarn Balls ---
@@ -496,16 +512,23 @@ window.renderCheckoutSummary = function() {
     `;
 };
 
-window.processCheckout = function(e) {
+window.handlePaymentSubmit = function(e) {
     e.preventDefault();
-    const successMsg = document.getElementById('checkout-success');
-    successMsg.style.display = 'block';
+    if (cartItems.length === 0) {
+        alert("Your cart is empty! Please add items before checking out.");
+        return;
+    }
     
+    // Wipe Cart Data
     cartItems = [];
     localStorage.setItem('pureknit_cart_items', JSON.stringify([]));
     updateCartCounter();
     
-    setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+    // Display Success Modal
+    const overlay = document.getElementById('success-overlay');
+    const modal = document.getElementById('success-modal');
+    if (overlay) overlay.style.display = 'block';
+    if (modal) modal.style.display = 'block';
 };
 
 // --- Authentication Local Database Logic ---
@@ -619,4 +642,56 @@ window.handleLogin = function(e) {
 window.handleLogout = function() {
     localStorage.removeItem('pureknit_current_user');
     window.location.reload();
+};
+
+window.renderRewardsHub = function() {
+    const hub = document.getElementById('auth-rewards-gateway');
+    if (!hub) return;
+    
+    let cl = localStorage.getItem('site_lang_pureknit') || 'en';
+    const dictObj = translations[cl] || translations.en;
+    let currentUser = JSON.parse(localStorage.getItem('pureknit_current_user'));
+
+    if (currentUser) {
+        let pts = (currentUser.name.length * 350) + 1200;
+        let p_width = Math.min((pts / 10000) * 100, 100);
+        let tierName = pts > 5000 ? (dictObj.tier_cashmere || "Gold Cashmere") : (pts > 2000 ? (dictObj.tier_silk || "Silver Silk") : (dictObj.tier_cotton || "Bronze Cotton"));
+        
+        hub.innerHTML = `
+            <div style="font-size:1.2rem; color:var(--text-muted);"><span data-lang="rewards_user">${dictObj.rewards_user || "Welcome"}</span>, <strong style="color:var(--primary);">${currentUser.name}</strong></div>
+            <div style="font-weight:600; margin-top:2rem; font-size:1.15rem; color:var(--text-heading);">${dictObj.rewards_tier || "Current Tier:"} <span style="color:var(--accent); font-weight:800;">${tierName}</span></div>
+            <div class="points-display" style="font-family:'Outfit'; font-size:5rem; background:linear-gradient(135deg, var(--accent), var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin:1rem 0;">${pts.toLocaleString()}</div>
+            <div style="color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; font-size:0.8rem; font-weight:700;">${dictObj.rewards_points || "Thread Points"}</div>
+            
+            <div style="width:100%; height:12px; background:rgba(74,20,140,0.1); border-radius:20px; margin:2.5rem 0; overflow:hidden; position:relative;">
+                <div class="progress-fill" style="height:100%; background:linear-gradient(90deg, #ff8a65, #7e57c2); width:0%; border-radius:20px; transition:width 1s ease-out;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-weight:600; color:var(--text-muted); margin-top:-1.5rem; margin-bottom:3rem; padding:0 5%;">
+                <span>0</span><span>2k</span><span>5k</span><span>10k+</span>
+            </div>
+            
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; text-align:left;">
+                <div style="background:rgba(255,255,255,0.4); padding:1.5rem; border-radius:12px; border:1px solid rgba(74,20,140,0.05);">
+                    <h3 style="color:var(--text-heading); margin-bottom:0.5rem;" data-lang="perk1_title">${dictObj.perk1_title || "Free Shipping"}</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;" data-lang="perk1_desc">${dictObj.perk1_desc || "Always completely free domestic shipping for members on any quantity."}</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.4); padding:1.5rem; border-radius:12px; border:1px solid rgba(74,20,140,0.05);">
+                    <h3 style="color:var(--primary); margin-bottom:0.5rem;" data-lang="perk2_title">${dictObj.perk2_title || "Wholesale Unlock"}</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;" data-lang="perk2_desc">${dictObj.perk2_desc || "Reach Silver Silk to access B2B bulk discount quoting instantly."}</p>
+                </div>
+            </div>
+        `;
+        
+        setTimeout(() => {
+            const bar = document.querySelector('.progress-fill');
+            if(bar) bar.style.width = p_width + '%';
+        }, 100);
+
+    } else {
+        hub.innerHTML = `
+            <h2 style="font-family:'Outfit'; color:var(--text-heading); font-size:2.2rem; margin-bottom:1rem;" data-lang="rewards_join">${dictObj.rewards_join || "Join the Club"}</h2>
+            <p style="color:var(--text-muted); font-size:1.15rem; line-height:1.6; max-width:500px; margin:0 auto 2rem;" data-lang="rewards_join_desc">${dictObj.rewards_join_desc || "Securely login or create an account to start earning Thread Points on your cashmere and silk acquisitions."}</p>
+            <button onclick="window.location.href='login.html'" class="btn btn-primary" style="padding:1rem 2.5rem; font-size:1.1rem; border-radius:12px;" data-lang="nav_login">${dictObj.tab_login || "Login"}</button>
+        `;
+    }
 };

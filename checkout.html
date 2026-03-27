@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureKnit - Secure Checkout</title>
+    <title>PureKnit - Checkout</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
@@ -11,11 +11,54 @@
     <style>
         .checkout-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 2fr 1fr;
             gap: 2rem;
-            align-items: start;
+            margin-top: 2rem;
         }
-        @media(max-width: 768px) {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-heading);
+            font-weight: 500;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(74,20,140,0.1);
+            background: rgba(255,255,255,0.6);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            border-color: var(--accent);
+        }
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(74,20,140,0.2);
+            z-index: 1000;
+            text-align: center;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+        }
+        @media (max-width: 768px) {
             .checkout-grid {
                 grid-template-columns: 1fr;
             }
@@ -28,11 +71,14 @@
 
     <nav class="navbar">
         <a href="index.html" class="logo">
-            <img src="logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
+            <img src="assets/logonew.png" alt="PureKnit Logo" title="PureKnit | Soft Hosiery Marketplace">
         </a>
         <ul class="nav-links">
             <li><a href="index.html" data-lang="nav_home">Home</a></li>
             <li><a href="products.html" data-lang="nav_products">Products</a></li>
+            <li><a href="about.html" data-lang="nav_about">About Us</a></li>
+            <li><a href="rewards.html" data-lang="nav_rewards">Rewards</a></li>
+            <li><a href="tracking.html" data-lang="nav_tracking">Track Order</a></li>
             <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
             <li><a href="help.html" data-lang="nav_help">Help</a></li>
             <li><a href="login.html" data-lang="nav_login">Login</a></li>
@@ -40,82 +86,71 @@
         <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
     </nav>
 
-    <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
-        <h1 class="page-title" data-lang="title_checkout" style="text-align:center; margin-bottom:2rem;">Secure Checkout</h1>
+    <main class="container support-layout" style="max-width: 1100px; margin: 4rem auto; position:relative; z-index:5;">
+        <h1 style="font-family:'Outfit'; font-size:2.5rem; color:var(--text-heading); margin-bottom:1rem;" data-lang="checkout_title">Secure Checkout</h1>
         
-        <form onsubmit="processCheckout(event)" class="checkout-grid">
-            <div class="glass-card" style="padding: 2rem; border-radius: 16px;">
-                <h3 data-lang="header_shipping" style="margin-bottom:1.5rem; font-family:'Outfit'; font-size:1.5rem; color:var(--text-heading);">Shipping Information</h3>
-                
-                <div class="form-group" style="display:flex; gap:1.5rem; margin-bottom:0;">
-                    <div style="flex:1;">
-                        <label data-lang="label_name">Full Name</label>
-                        <input type="text" required style="margin-bottom:1.5rem;">
+        <div class="checkout-grid">
+            <div class="glass-card" style="padding: 2.5rem;">
+                <h2 style="font-family:'Outfit'; margin-bottom: 1.5rem;" data-lang="checkout_billing">Billing & Shipping</h2>
+                <form id="checkout-form" onsubmit="handlePaymentSubmit(event)">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label data-lang="checkout_fname">First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="checkout_lname">Last Name</label>
+                            <input type="text" required>
+                        </div>
                     </div>
-                    <div style="flex:1;">
-                        <label data-lang="label_phone">Phone Number</label>
-                        <input type="tel" required style="margin-bottom:1.5rem;">
+                    <div class="form-group">
+                        <label data-lang="checkout_address">Address Line</label>
+                        <input type="text" required>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label data-lang="label_address">Street Address</label>
-                    <input type="text" required>
-                </div>
-                
-                <div class="form-group" style="display:flex; gap:1rem; margin-bottom:0;">
-                    <div style="flex:1;">
-                        <label data-lang="label_city">City</label>
-                        <input type="text" required style="margin-bottom:1.5rem;">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label data-lang="checkout_city">City / District</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="checkout_pin">PIN Code</label>
+                            <input type="text" pattern="[0-9]{5,6}" title="Valid Postal/PIN code" required>
+                        </div>
                     </div>
-                    <div style="flex:1;">
-                        <label data-lang="label_state">State / Province</label>
-                        <input type="text" required style="margin-bottom:1.5rem;">
-                    </div>
-                    <div style="flex:1;">
-                        <label data-lang="label_zip">ZIP / Postal Code</label>
-                        <input type="text" required style="margin-bottom:1.5rem;">
-                    </div>
-                </div>
 
-                <hr style="border:none; border-top:1px solid rgba(74,20,140,0.1); margin: 1rem 0 2rem;">
+                    <h2 style="font-family:'Outfit'; margin-top: 2rem; margin-bottom: 1.5rem;" data-lang="checkout_payment">Payment Detail (Mock)</h2>
+                    <div class="form-group">
+                        <label data-lang="checkout_card">Card Number</label>
+                        <input type="text" placeholder="XXXX XXXX XXXX XXXX" pattern="[0-9\s]+" required>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label data-lang="checkout_expiry">Expiry</label>
+                            <input type="text" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="password" maxlength="4" required>
+                        </div>
+                    </div>
 
-                <h3 data-lang="header_payment" style="margin-bottom:1.5rem; font-family:'Outfit'; font-size:1.5rem; color:var(--text-heading);">Payment Details</h3>
-                <div class="form-group">
-                    <label data-lang="label_card">Credit/Debit Card Number</label>
-                    <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" required>
-                </div>
-                <div class="form-group" style="display:flex; gap:1rem; margin-bottom:0;">
-                    <div style="flex:1;">
-                        <label data-lang="label_expiry">Expiry Date (MM/YY)</label>
-                        <input type="text" placeholder="MM/YY" required>
-                    </div>
-                    <div style="flex:1;">
-                        <label data-lang="label_cvv">CVV Security Code</label>
-                        <input type="password" placeholder="123" required>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; margin-top: 1.5rem; font-size: 1.1rem; border-radius: 12px; cursor:pointer;" data-lang="checkout_paybtn">Confirm & Pay</button>
+                </form>
             </div>
-            
-            <div class="glass-card" style="padding: 2rem; border-radius: 16px; position: sticky; top: 120px;">
-                <h3 data-lang="cart_summary" style="margin-bottom:1.5rem; font-family:'Outfit'; font-size:1.5rem; color:var(--text-heading);">Summary</h3>
-                
-                <div id="checkout-dynamic-summary">
-                    <!-- Dynamic Summary Rendered by JS -->
-                </div>
 
-                <div style="color:var(--text-muted); margin-bottom:2rem; font-size:0.95rem;">
-                    Ensure your shipping information is correct before securely placing your order. 
-                    Your payment data is fully encrypted.
-                </div>
-                
-                <div id="checkout-success" class="success-msg" style="text-align:center; padding:1.5rem; font-size:1.1rem; border-radius:12px; margin-bottom:1rem; display:none;" data-lang="msg_order_success">
-                    Order Placed Successfully! Thank you.
-                </div>
-                <button type="submit" class="btn btn-primary" data-lang="btn_place_order" style="width:100%; border-radius:12px; padding:1.2rem; font-size:1.1rem;">Place Order</button>
+            <div class="glass-card" style="padding: 2.5rem; height: fit-content;" id="checkout-summary-box">
+                <!-- script.js will perfectly renderCheckoutSummary() dynamically here -->
             </div>
-        </form>
+        </div>
     </main>
+
+    <div class="modal-overlay" id="success-overlay"></div>
+    <div class="success-modal" id="success-modal">
+        <div style="font-size: 4rem; color: #4caf50; margin-bottom: 1rem;">&#10004;</div>
+        <h2 style="font-family:'Outfit'; font-size: 2rem; color: var(--text-heading); margin-bottom: 1rem;" data-lang="checkout_success">Order Confirmed!</h2>
+        <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 2rem;" data-lang="checkout_success_desc">Your premium hosiery is being prepared for dispatch. A tracking link has been emailed to you.</p>
+        <button onclick="window.location.href='index.html'" class="btn btn-primary" style="padding: 1rem 2rem; border-radius: 12px;" data-lang="checkout_return">Return Home</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

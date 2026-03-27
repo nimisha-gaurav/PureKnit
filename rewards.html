@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PureKnit - Your Cart</title>
+    <title>PureKnit - Rewards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .rewards-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(74,20,140,0.1);
+        }
+    </style>
 </head>
 <body>
     <div id="glow"></div>
@@ -21,26 +30,23 @@
             <li><a href="index.html" data-lang="nav_home">Home</a></li>
             <li><a href="products.html" data-lang="nav_products">Products</a></li>
             <li><a href="about.html" data-lang="nav_about">About Us</a></li>
-            <li><a href="rewards.html" data-lang="nav_rewards">Rewards</a></li>
+            <li><a href="rewards.html" data-lang="nav_rewards" class="active">Rewards</a></li>
             <li><a href="tracking.html" data-lang="nav_tracking">Track Order</a></li>
-            <li><a href="cart.html"><span data-lang="nav_cart" class="active">Cart</span> <span class="cart-badge">0</span></a></li>
+            <li><a href="cart.html"><span data-lang="nav_cart">Cart</span> <span class="cart-badge">0</span></a></li>
             <li><a href="help.html" data-lang="nav_help">Help</a></li>
             <li><a href="login.html" data-lang="nav_login">Login</a></li>
         </ul>
         <button id="langToggleBtn" class="lang-toggle">EN / HI</button>
     </nav>
 
-    <main class="container cart-layout">
-        <div class="cart-main">
-            <h1 class="page-title" style="text-align:left; margin-bottom: 2rem;">Shopping Cart</h1>
-            <div id="cart-items-container" class="cart-items-list">
-                <!-- Javascript will powerfully assemble detailed cart objects here -->
-            </div>
-        </div>
-        <div class="cart-sidebar">
-            <div id="cart-summary-totals" class="summary-box">
-                <!-- Shopping totals populated via real-time logic -->
-            </div>
+    <main class="container" style="max-width: 800px; margin: 6rem auto 4rem; position:relative; z-index:5;">
+        <header style="text-align:center; margin-bottom: 3rem;">
+            <h1 style="font-family:'Outfit'; font-size:3rem; color:var(--text-heading);" data-lang="rewards_title">PureKnit Loyalty Club</h1>
+            <p style="color:var(--text-muted); font-size:1.2rem; margin-top:0.5rem;" data-lang="rewards_subtitle">Earn Thread Points on every purchase.</p>
+        </header>
+
+        <div class="rewards-card glass-card" id="auth-rewards-gateway" style="min-height:400px; display:flex; flex-direction:column; justify-content:center;">
+            <!-- script.js will inject renderRewardsHub() dynamically here based on Login state -->
         </div>
     </main>
 
